@@ -10,9 +10,9 @@ import com.example.userrecycler.MainActivity
 import com.example.userrecycler.R
 import com.example.userrecycler.model.User
 
-class UserAdapter(context: MainActivity, users: ArrayList<User>): RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
+class UserAdapter(context: MainActivity, users: MutableList<User>): RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
     private val mContext: Context = context
-    private var mUsers: ArrayList<User> = users
+    private var mUsers: MutableList<User> = users
 
 
 
@@ -40,7 +40,7 @@ class UserAdapter(context: MainActivity, users: ArrayList<User>): RecyclerView.A
         val userAge: TextView = itemView.findViewById(R.id.userAge)
     }
 
-    fun setUserList(users: ArrayList<User>){
+    fun setUserList(users: MutableList<User>){
         mUsers = users
         notifyDataSetChanged()
     }

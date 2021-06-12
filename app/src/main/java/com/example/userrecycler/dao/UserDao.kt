@@ -22,8 +22,8 @@ interface UserDao {
 
 
     @Query("select * from users")
-    fun getAllUsers(): LiveData<ArrayList<User>>
+    fun getAllUsers(): LiveData<MutableList<User>>
 
     @Query("select * from users where age > 18 order by age asc")
-    fun getAllUsersOver18(): LiveData<ArrayList<User>>
+    fun getAllUsersOver18(): LiveData<MutableList<User>>
 }

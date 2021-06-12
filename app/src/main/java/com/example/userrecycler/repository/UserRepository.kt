@@ -9,8 +9,8 @@ import com.example.userrecycler.model.User
 
 class UserRepository(application: Application) {
     var userDao: UserDao
-    var allUsers: LiveData<ArrayList<User>>
-    var allUsersOver18: LiveData<ArrayList<User>>
+    var allUsers: LiveData<MutableList<User>>
+    var allUsersOver18: LiveData<MutableList<User>>
 
     init {
          val userDatabase: UserDatabase = UserDatabase.getInstance(application)
@@ -36,11 +36,11 @@ class UserRepository(application: Application) {
         DeleteAllUserAsyncTask(userDao).execute()
     }
 
-    fun getAllUser(): LiveData<ArrayList<User>>{
+    fun getAllUser(): LiveData<MutableList<User>>{
         return allUsers
     }
 
-    fun getAllUserOver18(): LiveData<ArrayList<User>>{
+    fun getAllUserOver18(): LiveData<MutableList<User>>{
         return allUsersOver18
     }
 

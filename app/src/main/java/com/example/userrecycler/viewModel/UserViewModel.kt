@@ -25,11 +25,11 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         repository.deleteAllUsers()
     }
 
-    fun getAllUsers(): LiveData<ArrayList<User>> {
+    fun getAllUsers(): LiveData<MutableList<User>> {
         return repository.getAllUser()
     }
 
-    fun getAllUsersOver18(): LiveData<ArrayList<User>>{
+    fun getAllUsersOver18(): LiveData<MutableList<User>>{
         return repository.getAllUserOver18()
     }
 
